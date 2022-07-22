@@ -4,7 +4,7 @@
 //"spider":"https://github.com/woshishiq1/gerenziyong/blob/main/bc.jar?raw=true",
 //"spider":"https://gitea.com/Guard/bc/raw/branch/main/tm.jar",
 
-"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=Y2xhbjovL1RWQm94L3R2L3RzLnR4dA=="]}]}],
+"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cDovL3B0aTE2MnN1MjIueW91aHVpMTEyLmNvbS90di9saXZlLnR4dA=="]}]}],
 
 "sites": [
 {"key": "Kunyu77"         ,"name":"🐞酷云七七","type":3,"api":"csp_Kunyu77","searchable":1,"quickSearch":1,"filterable":1},
