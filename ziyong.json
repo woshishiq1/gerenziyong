@@ -1,7 +1,7 @@
 {
 "wallpaper":"https://picsum.photos/1080",
 
-"spider":"clan://TVBox/bc.jar",
+"spider":"https://cdn.jsdelivr.net/gh/woshishiq1/gerenziyong@main/bc.jar",
 //"spider":"https://gitea.com/Guard/bc/raw/branch/main/tm.jar",
 
 "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=Y2xhbjovL1RWQm94L3R2L3RzLnR4dA=="]}]}],
