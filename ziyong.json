@@ -1,6 +1,6 @@
 {
 
-"spider":"https://cdn.jsdelivr.net/gh/woshishiq1/gerenziyong@main/bc.jar",
+"spider":"http://home.jundie.top:81/jar/top93.jar",
 
 "lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cDovL3B0aTE2MnN1MjIueW91aHVpMTEyLmNvbS90di9saXZlLnR4dA=="]}]}],
 
