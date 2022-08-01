@@ -1,0 +1,91 @@
+
+proxies:
+
+ - {"name": "-欢迎使用BuLink自建分享节点 限月流量5G 免费资源请合理使用-", "type": "vmess", "server": "以下BuLink节点计流量", "port": 0, "uuid": "6a3bcc08-9c77-4c02-844b-4a694c4f2fea", "alterId": 0, "cipher": "auto", "udp": true}
+ - {"name": "bulink 网友分享线路 19 三网", "type": "vmess", "server": "la49.bulink.xyz.fobzs.com", "port": 8008, "uuid": "de268399-7660-4219-8dc6-49be39530483", "alterId": 0, "cipher": "auto", "udp": true}
+ - {"name": "bulink 网友分享线路 18 三网", "type": "vmess", "server": "la2.us.365563.xyz", "port": 9080, "uuid": "de268399-7660-4219-8dc6-49be39530483", "alterId": 0, "cipher": "auto", "udp": true}
+ - {"name": "bulink 网友分享线路 12 三网", "type": "vmess", "server": "la43.freev2.xyz", "port": 8090, "uuid": "de268399-7660-4219-8dc6-49be39530483", "alterId": 0, "cipher": "auto", "udp": true}
+ - {"name": "bulink 网友分享线路 11 三网", "type": "vmess", "server": "ny56.bulink.xyz.fobzs.com", "port": 8000, "uuid": "de268399-7660-4219-8dc6-49be39530483", "alterId": 0, "cipher": "auto", "udp": true}
+ - {"name": "bulink 网友分享线路 10 三网", "type": "vmess", "server": "la1.bulink.xyz.freev2.xyz", "port": 8090, "uuid": "de268399-7660-4219-8dc6-49be39530483", "alterId": 0, "cipher": "auto", "udp": true}
+ - {"name": "更新于:12-31 08:00 -by BuLink.xyz- 以下节点不计流量", "type": "vmess", "server": "使用前记得更新订阅", "port": "0", "uuid": "6a3bcc08-9c77-4c02-844b-4a694c4f2fea", "alterId": "0", "cipher": "auto", "udp": true}
+
+# 代理策略组
+proxy-groups:
+  # select 用来允许用户手动选择 代理服务器 或 服务器组
+  # 您也可以使用 RESTful API 去切换服务器，这种方式推荐在 GUI 中使用
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+     - DIRECT
+     - ♻️ 自动选择
+     - "-欢迎使用BuLink自建分享节点 限月流量5G 免费资源请合理使用-"
+     - "bulink 网友分享线路 19 三网"
+     - "bulink 网友分享线路 18 三网"
+     - "bulink 网友分享线路 12 三网"
+     - "bulink 网友分享线路 11 三网"
+     - "bulink 网友分享线路 10 三网"
+     - "更新于:12-31 08:00 -by BuLink.xyz- 以下节点不计流量"
+    
+
+  # url-test 可以自动选择与指定 URL 测速后，延迟最短的服务器
+  - name: ♻️ 自动选择
+    type: url-test
+    proxies:
+     - "-欢迎使用BuLink自建分享节点 限月流量5G 免费资源请合理使用-"
+     - "bulink 网友分享线路 19 三网"
+     - "bulink 网友分享线路 18 三网"
+     - "bulink 网友分享线路 12 三网"
+     - "bulink 网友分享线路 11 三网"
+     - "bulink 网友分享线路 10 三网"
+     - "更新于:12-31 08:00 -by BuLink.xyz- 以下节点不计流量"
+    
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+
+  # fallback 可以尽量按照用户书写的服务器顺序，在确保服务器可用的情况下，自动选择服务器
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+
+  # 漏网之鱼  全匹配规则
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+     - 🚀 节点选择
+     - 🎯 全球直连
+     - ♻️ 自动选择
+     - "-欢迎使用BuLink自建分享节点 限月流量5G 免费资源请合理使用-"
+     - "bulink 网友分享线路 19 三网"
+     - "bulink 网友分享线路 18 三网"
+     - "bulink 网友分享线路 12 三网"
+     - "bulink 网友分享线路 11 三网"
+     - "bulink 网友分享线路 10 三网"
+     - "更新于:12-31 08:00 -by BuLink.xyz- 以下节点不计流量"
+    
+rules:
+  # 回环
+  - IP-CIDR,127.0.0.1/32,REJECT,no-resolve
+  # 国内网站
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-KEYWORD,-cn,DIRECT
+  # 抗 DNS 污染
+  - DOMAIN-KEYWORD,amazon,🚀 节点选择
+  - DOMAIN-KEYWORD,google,🚀 节点选择
+  - DOMAIN-KEYWORD,gmail,🚀 节点选择
+  - DOMAIN-KEYWORD,youtube,🚀 节点选择
+  - DOMAIN-KEYWORD,facebook,🚀 节点选择
+  - DOMAIN-SUFFIX,fb.me,🚀 节点选择
+  - DOMAIN-SUFFIX,fbcdn.net,🚀 节点选择
+  - DOMAIN-KEYWORD,twitter,🚀 节点选择
+  - DOMAIN-KEYWORD,instagram,🚀 节点选择
+  - DOMAIN-KEYWORD,dropbox,🚀 节点选择
+  - DOMAIN-SUFFIX,twimg.com,🚀 节点选择
+  - DOMAIN-KEYWORD,blogspot,🚀 节点选择
+  - DOMAIN-SUFFIX,youtu.be,🚀 节点选择
+  - DOMAIN-KEYWORD,whatsapp,🚀 节点选择
+  # 最终规则
+  - GEOIP,CN,DIRECT
+  - MATCH,🐟 漏网之鱼
