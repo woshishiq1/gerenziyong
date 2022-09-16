@@ -28,7 +28,9 @@ https://doc.fastgit.org/zh-cn/guide.html#ssh-操作
 ### Github 静态加速  
 `https://cdn.staticaly.com/gh/woshishiq1/gerenziyong/main/爬虫/腾讯.txt`  
 
-`https://cdn.jsdelivr.net/gh/woshishiq1/gerenziyong@main/爬虫/腾讯.txt`  
+`https://cdn.jsdelivr.net/gh/woshishiq1/gerenziyong@main/爬虫/腾讯.txt`
+
+`https://gcore.jsdelivr.net/gh/woshishiq1/gerenziyong@main/爬虫/腾讯.txt`
 
 `https://purge.jsdelivr.net/gh/`  
 
