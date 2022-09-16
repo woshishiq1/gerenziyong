@@ -30,7 +30,7 @@ https://doc.fastgit.org/zh-cn/guide.html#ssh-操作
 
 `https://cdn.jsdelivr.net/gh/woshishiq1/gerenziyong/blob/main/爬虫/腾讯.txt`  
 
-`https://purge.jsdelivr.net/gh/`  
+`https://purge.jsdelivr.net/gh/woshishiq1/gerenziyong/blob/main/爬虫/腾讯.txt`  
 
 ------
 ### 以上为互联网流传资源，不保证内容的真实性和可靠性。本页面只是收集[box](https://docs.qq.com/sheet/DWnVsZU5uSkhBSHlv?tab=BB08J2)，自用请勿宣传。
