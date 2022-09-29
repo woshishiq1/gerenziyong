@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="theme-gitea">
+<head data-suburl="">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>yan11xx/TVBOX - ext/Alist1.json at master - Agit</title>
+	<meta name="theme-color" content="#6cc644">
+	<meta name="author" content="yan11xx" />
+	<meta name="description" content="TVBOX" />
+	<meta name="keywords" content="go,git,self-hosted,gitea">
+	<meta name="referrer" content="no-referrer" />
+	<meta name="_csrf" content="2PeldeDYY6PJxv1bWVcAwTDlP486MTY2NDQ1ODA5Njk2Njc2OTAwNA" />
+	<meta name="_suburl" content="" />
+	
+		<meta name="_uid" content="1541" />
+	
+	
+	
+
+	<script>
+		window.config = {
+			AppVer: 'gitea模板还原\u002b136-g37b15f62b',
+			AppSubUrl: '',
+			StaticUrlPrefix: '',
+			UseServiceWorker:  true ,
+			csrf: '2PeldeDYY6PJxv1bWVcAwTDlP486MTY2NDQ1ODA5Njk2Njc2OTAwNA',
+			HighlightJS: false,
+			SimpleMDE: false,
+			Tribute: false,
+			U2F: false,
+			Heatmap: false,
+			heatmapUser: null,
+			NotificationSettings: {
+				MinTimeout:  10000 ,
+				TimeoutStep:   10000 ,
+				MaxTimeout:  60000 ,
+				EventSourceUpdateTime:  10000 ,
+			},
+			PageIsProjects: false,
+      
+		};
+	</script>
+	<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+	<link rel="alternate icon" href="/img/favicon.png" type="image/png">
+	<link rel="mask-icon" href="/img/agit-safari.svg" color="#609926">
+	<link rel="fluid-icon" href="/img/agit-lg.png" title="Agit">
+
+
+	<link rel="stylesheet" href="/css/index.css?v=6ab3d3a502725c978d285e96b831c280">
+	<noscript>
+		<style>
+      .dropdown:hover > .menu { display: block; }
+      .ui.secondary.menu .dropdown.item > .menu { margin-top: 0; }
+		</style>
+	</noscript>
+	<style class="list-search-style"></style>
+
+	
+		<meta property="og:title" content="TVBOX" />
+		<meta property="og:url" content="https://agit.ai/yan11xx/TVBOX" />
+		
+	
+	<meta property="og:type" content="object" />
+	
+		<meta property="og:image" content="https://agit.ai/user/avatar/yan11xx/-1" />
+	
+
+<meta property="og:site_name" content="Agit" />
+
+	
+
+
+<link rel="stylesheet" href="/vendor/plugins/xterm/xterm.css?v=6ab3d3a502725c978d285e96b831c280" />
+
+
+</head>
+<body>
+	
+
+	<div class="full height">
+		<noscript>使用 JavaScript能使本网站更好的工作。</noscript>
+
+		
+
+		
+			
+			<div class="ui top secondary stackable main menu following bar light" style="background: #242628; height: 52px;">
+				
+<div class="ui container z-max" id="navbar" v-cloak style="position:fixed;">
+	<div class="i-flex i-align-center i-justify-between logo-img" style="margin-right:26px;height:52px;">
+		<a href="/">
+			<img class="share-nav-logo" src="/img/logo/nav-logo.svg">
+		</a>
+		<div class="ui basic icon button mobile-only" id="navbar-expand-toggle">
+			<i class="sidebar icon"></i>
+		</div>
+	</div>
+
+	
+		<a class="item " href="/">首页</a>
+		
+		<a class="item " href="/issues">讨论区</a>
+		
+		
+		<a class="item " href="/pulls">合并请求</a>
+		
+		<a class="mobile-only item " href="/explore/repos">探索</a>
+		<div class="ui input d-relative navbar-search not-mobile" :class="{active:menuVisible}">
+			<i class="icon iconfont icon-search"></i>
+			<input v-model="searchName" placeholder="搜索" type="text" autocomplete="off"  @focus="menuVisible = true">
+			<div v-show="searchName.trim() && menuVisible" class="ui segment transition z-menu" @focus="menuVisible = true">
+				<div class="ui list" @click="handleSearch('repos')">
+					<span class="mr-md">${searchName}</span> <span class="i-text-right">仓库</span>
+				</div>
+				<div class="ui list" @click="handleSearch('users')">
+					<span class="mr-md">${searchName}</span> <span class="i-text-right">用户</span>
+				</div>
+				<div class="ui list" @click="handleSearch('organizations')">
+					<span class="mr-md">${searchName}</span> <span class="i-text-right">组织</span>
+				</div>
+			</div>
+
+		</div>
+
+	
+	
+
+	
+
+
+	
+
+	<div class="right stackable menu header-right">
+		
+		<div class="ui dropdown jump item poping up active visible">
+			<i class="iconfont mr-3xs font-size-2xl" :class='{"icon-lang-zh2en":lan!=="en-US","icon-lang-en2zh":lan==="en-US"}'></i>
+			<span id="footerLang" class="hidden">简体中文</span>
+			<i class="caret down icon font-size-sm"></i>
+			<div class="menu">
+				
+				<span lang="zh-CN" class="item active selected" onclick="handleLanguage(&#34;zh-CN&#34;)">简体中文</span>
+				
+				<span lang="en-US" class="item " onclick="handleLanguage(&#34;en-US&#34;)">English</span>
+				
+			</div>
+		</div>
+
+		<a href="/notifications" class="item poping up" data-content='通知' data-variation="tiny inverted">
+				<span class="text d-relative">
+					<i class="iconfont icon-bell mr-none font-size-lg"></i>
+					<span class="sr-mobile-only">通知</span>
+					
+					
+				</span>
+		</a>
+
+		<div class="ui dropdown jump item poping up" data-content="创建…" data-variation="tiny inverted">
+		<span class="text">
+					<i class="iconfont icon-plus mr-3xs"></i>
+					<span class="sr-mobile-only">创建…</span>
+					<i class="caret down icon font-size-sm not-mobile"></i>
+				</span>
+		<div class="menu left">
+			<a class="item" href="/repo/create">
+				<i class="iconfont icon-create-repo"></i> 创建仓库
+			</a>
+			<a class="item" href="/repo/migrate">
+				<i class="iconfont icon-migrate-repo"></i> 迁移外部仓库
+			</a>
+			
+			<a class="item" href="/org/create">
+				<i class="iconfont icon-org-member"></i> 创建组织
+			</a>
+			
+		</div>
+	</div>
+
+	<div class="ui dropdown jump item poping up" data-position="bottom right" tabindex="-1" data-content="个人中心" data-variation="tiny inverted">
+	<span class="text">
+					<img class="ui tiny avatar image mr-3xs" src="/user/avatar/woshishiq1/-1">
+					<span class="sr-only">个人中心</span>
+					<span class="mobile-only">woshishiq1</span>
+					<i class="caret down icon font-size-sm not-mobile" tabindex="-1"></i>
+				</span>
+	<div class="menu user-menu" tabindex="-1">
+		<div class="ui header">
+			已登录用户 <strong>woshishiq1</strong>
+		</div>
+
+		<div class="divider"></div>
+
+		<a class="item" href="/woshishiq1">
+			<i class="iconfont icon-user"></i>
+			个人主页
+		</a>
+
+		<a class="item" href="/user/settings/profile">
+			<i class="iconfont icon-gear"></i>
+			账号管理
+		</a>
+
+		
+
+		<a class="item" href="/user/settings/computing">
+			<i class="iconfont icon-pkg-manage"></i>
+			资源管理
+		</a>
+
+		<div class="divider"></div>
+		<a  class="item link-action logout" href data-url="/user/logout" data-redirect="/" onclick="logoutMethod()">
+			<i class="iconfont icon-quit"></i>
+			退出
+		</a>
+	</div>
+</div>
+</div>
+
+
+</div>
+
+			</div>
+		
+
+
+<div id="repoHome" class="repository file list ">
+	<div class="header-wrapper">
+
+	<div class="ui container">
+		<div class="repo-header">
+			<div class="ui huge breadcrumb repo-title">
+				
+					<div class="repo-header-icon">
+	
+		
+			<svg viewBox="0 0 16 16" class="svg octicon-repo" width="32" height="32" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/></svg>
+			
+		
+	
+</div>
+
+				
+				<a href="/yan11xx">yan11xx</a>
+				<div class="divider"> / </div>
+				<a href="/yan11xx/TVBOX">TVBOX</a>
+
+				<i class="iconfont icon-ai"></i>
+
+				
+					
+						
+					
+				
+				
+				
+				
+				
+			</div>
+			
+				<div class="repo-buttons">
+					<form method="post" action="/yan11xx/TVBOX/action/watch?redirect_to=%2fyan11xx%2fTVBOX%2fsrc%2fbranch%2fmaster%2fext%2fAlist1.json">
+						<input type="hidden" name="_csrf" value="2PeldeDYY6PJxv1bWVcAwTDlP486MTY2NDQ1ODA5Njk2Njc2OTAwNA">
+						<div class="ui labeled button" tabindex="0">
+							<button type="submit" class="ui compact basic button">
+								<i class="iconfont mr-2xs icon-eye"></i>关注
+							</button>
+							<a class="ui basic label" href="/yan11xx/TVBOX/watchers">
+								1
+							</a>
+						</div>
+					</form>
+					<form method="post" action="/yan11xx/TVBOX/action/unstar?redirect_to=%2fyan11xx%2fTVBOX%2fsrc%2fbranch%2fmaster%2fext%2fAlist1.json">
+						<input type="hidden" name="_csrf" value="2PeldeDYY6PJxv1bWVcAwTDlP486MTY2NDQ1ODA5Njk2Njc2OTAwNA">
+						<div class="ui labeled button" tabindex="0">
+							<button type="submit" class="ui compact basic button">
+								<i class="mr-2xs iconfont icon-star-fill"></i>取消点赞
+							</button>
+							<a class="ui basic label" href="/yan11xx/TVBOX/stars">
+								1
+							</a>
+						</div>
+					</form>
+					
+						<div class="ui labeled button " tabindex="0">
+							<a class="ui compact basic button
+								"
+								
+									href="/repo/fork/4560"
+								 data-position="top center" data-variation="tiny">
+								<i class="mr-2xs iconfont icon-fork"></i>派生
+							</a>
+							<a class="ui basic label" href="/yan11xx/TVBOX/forks">
+								0
+							</a>
+						</div>
+					
+				</div>
+			
+		</div>
+	</div>
+
+	<div class="ui tabs container">
+		
+			<div class="ui tabular stackable menu navbar">
+				
+				<a class="active item" href="/yan11xx/TVBOX">
+					<i class="iconfont icon-code"></i> 代码
+				</a>
+				
+
+				
+					<a class=" item" href="/yan11xx/TVBOX/issues">
+						<i class="iconfont icon-open"></i> 讨论 <span class="ui gray tiny label circular">0</span>
+					</a>
+				
+
+				
+
+				
+					<a class=" item" href="/yan11xx/TVBOX/pulls">
+						<i class="iconfont icon-merge-request"></i> 合并请求 <span class="ui gray tiny label circular">0</span>
+					</a>
+				
+
+				
+					<a class=" item" href="/yan11xx/TVBOX/wiki" >
+						<i class="iconfont icon-wiki"></i> 百科
+					</a>
+				
+
+				
+					<a class=" item" href="/yan11xx/TVBOX/activity">
+						<i class="iconfont icon-activity"></i> 动态
+					</a>
+				
+
+				
+	<a class=" item" href="/yan11xx/TVBOX/training">
+		<i class="iconfont icon-training"></i> 训练
+	</a>
+	<a class=" item" href="/yan11xx/TVBOX/storage">
+		<i class="iconfont icon-save"></i> 存储
+	</a>
+
+
+
+				
+			</div>
+		
+	</div>
+	<div class="ui tabs divider"></div>
+</div>
+
+	<span class="repo-url hidden">/yan11xx/TVBOX</span>
+	<span class="repo-id hidden">4560</span>
+	<div class="ui container">
+		
+
+
+
+		<div class="ui repo-description">
+			<div id="repo-desc">
+				
+				<a class="link" href=""></a>
+			</div>
+			
+		</div>
+		<div class="ui" id="repo-topics">
+		
+		
+		</div>
+		
+		<div class="hide" id="validate_prompt">
+			<span id="count_prompt">您最多选择25个主题</span>
+			<span id="format_prompt">主题必须以字母或数字开头，可以包含连字符 (-)，并且长度不得超过35个字符</span>
+		</div>
+		
+		
+		
+
+		<div class="ui segments repository-summary shadow-0 is-lang-stats">
+	<div class="ui segment sub-menu repository-menu">
+		<div class="ui two horizontal center link list">
+			
+				<div class="item">
+					<a class="ui" href="/yan11xx/TVBOX/commits/branch/master"><i class="iconfont icon-commit"></i> <b>6</b> 提交</a>
+				</div>
+			
+			
+				<div class="item">
+					<a class="ui" href="/yan11xx/TVBOX/branches/"><i class="iconfont icon-branch-down"></i> <b>1</b> 分支</a>
+				</div>
+				<div class="item">
+					<span class="ui"><i class="iconfont icon-memory"></i> <b id="RepoSize">608 KB</b></span>
+				</div>
+			
+		</div>
+	</div>
+	
+	<div class="ui segment sub-menu language-stats-details" style="display: none">
+		<div class="ui horizontal center link list">
+			
+			<div class="item">
+				<span class="ui">
+				<i class="color-icon" style="background-color: #cccccc"></i>
+				<b>
+					Text
+				
+				</b> 100%</span>
+			</div>
+			
+		</div>
+	</div>
+	<a class="ui segment language-stats">
+		
+		<div class="bar" style="width: 100%; background-color: #cccccc">&nbsp;</div>
+		
+	</a>
+	
+</div>
+
+		<div class="ui stackable secondary menu mobile--margin-between-items mobile--no-negative-margins">
+			<div class="fitted item choose reference">
+	<div class="ui floating filter dropdown custom" data-can-create-branch="false" data-no-results="未找到结果">
+		<div id="branchSelect" class="ui basic small compact button" data-mode="branches" @click="menuVisible = !menuVisible" @keyup.enter="menuVisible = !menuVisible">
+			<span class="text">
+				<i class="iconfont icon-branch-down"></i>
+				分支:
+				<strong>master</strong>
+			</span>
+			<i class="dropdown icon"></i>
+		</div>
+		<div class="data" style="display: none" data-mode="branches">
+			
+				<div class="item branch selected" data-url="/yan11xx/TVBOX/src/branch/master/ext/Alist1.json">master</div>
+			
+			
+		</div>
+		<div class="menu transition" :class="{visible: menuVisible}" v-if="menuVisible" v-cloak>
+			<div class="ui icon search input">
+				<i class="filter icon"></i>
+				<input name="search" ref="searchField" v-model="searchTerm" @keydown="keydown($event)" placeholder="过滤分支或标签...">
+			</div>
+			<div class="header branch-tag-choice">
+				<div class="ui grid">
+					<div class="two column row">
+						<a class="reference column" href="#" @click="mode = 'branches'; focusSearchField()">
+							<span class="text" :class="{black: mode !== 'branches'}">
+								<i class="iconfont icon-branch-down"></i> 分支列表
+							</span>
+						</a>
+						<a class="reference column" href="#" @click="mode = 'tags'; focusSearchField()">
+							<span class="text" :class="{black: mode !== 'tags'}">
+								<i class="reference tags icon"></i> 标签列表
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="scrolling menu" ref="scrollContainer">
+				<div v-for="(item, index) in filteredItems" :key="item.name" class="item" :class="{selected: item.selected, active: active == index}" @click="selectItem(item)" :ref="'listItem' + index">${ item.name }</div>
+				<div class="item" v-if="showCreateNewBranch" :class="{active: active == filteredItems.length}" :ref="'listItem' + filteredItems.length">
+					<a href="#" @click="createNewBranch()">
+						<div>
+							<i class="iconfont icon-branch-down"></i>
+							创建分支 <strong>${ searchTerm }</strong>
+						</div>
+						<div class="text small">
+							
+								从 &#39;master&#39;
+							
+						</div>
+					</a>
+					<form ref="newBranchForm" action="/yan11xx/TVBOX/branches/_new/branch/master" method="post">
+						<input type="hidden" name="_csrf" value="2PeldeDYY6PJxv1bWVcAwTDlP486MTY2NDQ1ODA5Njk2Njc2OTAwNA">
+						<input type="hidden" name="new_branch_name" v-model="searchTerm">
+					</form>
+				</div>
+			</div>
+			<div class="message" v-if="showNoResults">${ noResults }</div>
+		</div>
+	</div>
+</div>
+
+			
+			
+			
+			
+				<div class="fitted item">
+					<span class="ui breadcrumb repo-path">
+						<a class="section" href="/yan11xx/TVBOX/src/branch/master" title="TVBOX">TVBOX</a>
+						
+							<span class="divider">/</span>
+							
+								<span class="section">
+									<a href="/yan11xx/TVBOX/src/branch/master/ext" title="ext">ext</a></span>
+						
+							<span class="divider">/</span>
+							
+								<span class="active section" title="Alist1.json">Alist1.json</span>
+							
+						</span></div>
+			
+			<div class="right fitted item" id="file-buttons">
+				<div>
+					
+						
+						
+					
+
+					
+					
+				</div>
+			</div>
+
+			<div class="fitted item">
+				
+				
+			</div>
+		</div>
+		
+			<div class="tab-size-8 non-diff-file-content">
+	<h4 class="file-header ui top attached header">
+		<div class="file-header-left df ac">
+			
+				<div class="file-info text grey normal mono">
+					
+					
+						<div class="file-info-entry">
+							34 行
+						</div>
+					
+					
+						<div class="file-info-entry">
+							1.5 KB
+						</div>
+					
+					
+				</div>
+			
+		</div>
+		
+		<div class="file-header-right df ac">
+			<div class="ui right file-actions">
+				<div class="ui buttons">
+					<a class="ui button" href="/yan11xx/TVBOX/raw/branch/master/ext/Alist1.json">原始文件</a>
+					
+						<a class="ui button" href="/yan11xx/TVBOX/src/commit/5f89af5284bfe3083904228e8040b8e1aeb2aa7d/ext/Alist1.json">永久链接</a>
+					
+					
+						<a class="ui button" href="/yan11xx/TVBOX/blame/branch/master/ext/Alist1.json">Blame</a>
+					
+					<a class="ui button" href="/yan11xx/TVBOX/commits/branch/master/ext/Alist1.json">文件历史</a>
+				</div>
+				
+					
+						<span class="btn-octicon poping up disabled" data-content="您必须在派生这个仓库才能对此文件进行修改操作" data-position="bottom center" data-variation="tiny inverted"><svg viewBox="0 0 16 16" class="svg octicon-pencil" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"/></svg></span>
+					
+					
+						<span class="btn-octicon poping up disabled" data-content="您必须具有写权限才能对此文件进行修改操作。" data-position="bottom center" data-variation="tiny inverted"><svg viewBox="0 0 16 16" class="svg octicon-trashcan" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z"/></svg></span>
+					
+				
+			</div>
+		</div>
+		
+	</h4>
+	<div class="ui attached table unstackable segment">
+		<div class="file-view code-view">
+			
+				
+				<table>
+					<tbody>
+						
+						<tr>
+							<td id="L1" class="lines-num">
+								<span id="L1" data-line-number="1"></span>
+							</td>
+							<td rel="L1" class="lines-code chroma">
+								<code><span class="p">{</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L2" class="lines-num">
+								<span id="L2" data-line-number="2"></span>
+							</td>
+							<td rel="L2" class="lines-code chroma">
+								<code>  <span class="nt">&#34;👍我的盘&#34;</span><span class="p">:</span><span class="s2">&#34;http://139.224.64.109:5244&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L3" class="lines-num">
+								<span id="L3" data-line-number="3"></span>
+							</td>
+							<td rel="L3" class="lines-code chroma">
+								<code>  <span class="nt">&#34;👍轻弹浅唱&#34;</span><span class="p">:</span><span class="s2">&#34;https://alist.youte.ml&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L4" class="lines-num">
+								<span id="L4" data-line-number="4"></span>
+							</td>
+							<td rel="L4" class="lines-code chroma">
+								<code>  <span class="nt">&#34;💢Alist测试&#34;</span><span class="p">:</span><span class="s2">&#34;https://ali.liucn.repl.co&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L5" class="lines-num">
+								<span id="L5" data-line-number="5"></span>
+							</td>
+							<td rel="L5" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🌤晴园的宝藏库&#34;</span><span class="p">:</span><span class="s2">&#34;https://alist.52qy.repl.co&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L6" class="lines-num">
+								<span id="L6" data-line-number="6"></span>
+							</td>
+							<td rel="L6" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🦀9T(Adult)&#34;</span><span class="p">:</span><span class="s2">&#34;https://drive.9t.ee&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L7" class="lines-num">
+								<span id="L7" data-line-number="7"></span>
+							</td>
+							<td rel="L7" class="lines-code chroma">
+								<code>  <span class="nt">&#34;💂小兵组网盘影视&#34;</span><span class="p">:</span><span class="s2">&#34;https://6vv.app&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L8" class="lines-num">
+								<span id="L8" data-line-number="8"></span>
+							</td>
+							<td rel="L8" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🐋一只鱼&#34;</span><span class="p">:</span><span class="s2">&#34;https://alist.youte.ml&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L9" class="lines-num">
+								<span id="L9" data-line-number="9"></span>
+							</td>
+							<td rel="L9" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🌨秋雨分享&#34;</span><span class="p">:</span><span class="s2">&#34;https://share.laowang.me&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L10" class="lines-num">
+								<span id="L10" data-line-number="10"></span>
+							</td>
+							<td rel="L10" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🌊七米蓝&#34;</span><span class="p">:</span><span class="s2">&#34;https://al.chirmyram.com&#34;</span><span class="p">,</span> </code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L11" class="lines-num">
+								<span id="L11" data-line-number="11"></span>
+							</td>
+							<td rel="L11" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🐱梓澪の妙妙屋&#34;</span><span class="p">:</span><span class="s2">&#34;https://xn--i0v44m.xyz&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L12" class="lines-num">
+								<span id="L12" data-line-number="12"></span>
+							</td>
+							<td rel="L12" class="lines-code chroma">
+								<code>  <span class="nt">&#34;讯维云盘&#34;</span><span class="p">:</span><span class="s2">&#34;https://pan.xwbeta.com&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L13" class="lines-num">
+								<span id="L13" data-line-number="13"></span>
+							</td>
+							<td rel="L13" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🐉神族九帝&#34;</span><span class="p">:</span><span class="s2">&#34;https://alist.shenzjd.com&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L14" class="lines-num">
+								<span id="L14" data-line-number="14"></span>
+							</td>
+							<td rel="L14" class="lines-code chroma">
+								<code>  <span class="nt">&#34;💦姬路白雪の小站&#34;</span><span class="p">:</span><span class="s2">&#34;https://pan.jlbx.xyz&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L15" class="lines-num">
+								<span id="L15" data-line-number="15"></span>
+							</td>
+							<td rel="L15" class="lines-code chroma">
+								<code>  </code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L16" class="lines-num">
+								<span id="L16" data-line-number="16"></span>
+							</td>
+							<td rel="L16" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🔮嗨翻&#34;</span><span class="p">:</span><span class="s2">&#34;https://pan.hikerfans.com&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L17" class="lines-num">
+								<span id="L17" data-line-number="17"></span>
+							</td>
+							<td rel="L17" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🚆资源小站&#34;</span><span class="p">:</span><span class="s2">&#34;https://pan.142856.xyz&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L18" class="lines-num">
+								<span id="L18" data-line-number="18"></span>
+							</td>
+							<td rel="L18" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🐭米奇妙妙屋&#34;</span><span class="p">:</span><span class="s2">&#34;https://anime.mqmmw.ga&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L19" class="lines-num">
+								<span id="L19" data-line-number="19"></span>
+							</td>
+							<td rel="L19" class="lines-code chroma">
+								<code>  <span class="nt">&#34;📀小光盘&#34;</span><span class="p">:</span><span class="s2">&#34;https://alist.xiaoguanxiaocheng.life&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L20" class="lines-num">
+								<span id="L20" data-line-number="20"></span>
+							</td>
+							<td rel="L20" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🌴非盘&#34;</span><span class="p">:</span><span class="s2">&#34;http://www.feifwp.top&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L21" class="lines-num">
+								<span id="L21" data-line-number="21"></span>
+							</td>
+							<td rel="L21" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🥼帅盘&#34;</span><span class="p">:</span><span class="s2">&#34;https://hi.shuaipeng.wang&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L22" class="lines-num">
+								<span id="L22" data-line-number="22"></span>
+							</td>
+							<td rel="L22" class="lines-code chroma">
+								<code>  <span class="nt">&#34;☃姬路白雪&#34;</span><span class="p">:</span><span class="s2">&#34;https://pan.jlbx.xyz&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L23" class="lines-num">
+								<span id="L23" data-line-number="23"></span>
+							</td>
+							<td rel="L23" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🎧听闻网盘&#34;</span><span class="p">:</span><span class="s2">&#34;https://wangpan.sangxuesheng.com&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L24" class="lines-num">
+								<span id="L24" data-line-number="24"></span>
+							</td>
+							<td rel="L24" class="lines-code chroma">
+								<code>  <span class="nt">&#34;💾DISK&#34;</span><span class="p">:</span><span class="s2">&#34;http://124.222.140.243:8080&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L25" class="lines-num">
+								<span id="L25" data-line-number="25"></span>
+							</td>
+							<td rel="L25" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🌨云播放&#34;</span><span class="p">:</span><span class="s2">&#34;https://quanzi.laoxianghuijia.cn&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L26" class="lines-num">
+								<span id="L26" data-line-number="26"></span>
+							</td>
+							<td rel="L26" class="lines-code chroma">
+								<code>  <span class="nt">&#34;✨星梦&#34;</span><span class="p">:</span><span class="s2">&#34;https://pan.bashroot.top&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L27" class="lines-num">
+								<span id="L27" data-line-number="27"></span>
+							</td>
+							<td rel="L27" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🌊小江&#34;</span><span class="p">:</span><span class="s2">&#34;https://dyj.me&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L28" class="lines-num">
+								<span id="L28" data-line-number="28"></span>
+							</td>
+							<td rel="L28" class="lines-code chroma">
+								<code>  <span class="nt">&#34;💫触光&#34;</span><span class="p">:</span><span class="s2">&#34;https://pan.ichuguang.com&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L29" class="lines-num">
+								<span id="L29" data-line-number="29"></span>
+							</td>
+							<td rel="L29" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🕵好汉吧&#34;</span><span class="p">:</span><span class="s2">&#34;https://8023.haohanba.cn&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L30" class="lines-num">
+								<span id="L30" data-line-number="30"></span>
+							</td>
+							<td rel="L30" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🥗AUNEY&#34;</span><span class="p">:</span><span class="s2">&#34;http://121.227.25.116:8008&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L31" class="lines-num">
+								<span id="L31" data-line-number="31"></span>
+							</td>
+							<td rel="L31" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🎡资源小站&#34;</span><span class="p">:</span><span class="s2">&#34;https://960303.xyz/&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L32" class="lines-num">
+								<span id="L32" data-line-number="32"></span>
+							</td>
+							<td rel="L32" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🏝fenwe&#34;</span><span class="p">:</span><span class="s2">&#34;http://www.fenwe.tk:5244&#34;</span><span class="p">,</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L33" class="lines-num">
+								<span id="L33" data-line-number="33"></span>
+							</td>
+							<td rel="L33" class="lines-code chroma">
+								<code>  <span class="nt">&#34;🎢轻弹浅唱&#34;</span><span class="p">:</span><span class="s2">&#34;https://g.xiang.lol&#34;</span></code>
+							</td>
+						</tr>
+						
+						<tr>
+							<td id="L34" class="lines-num">
+								<span id="L34" data-line-number="34"></span>
+							</td>
+							<td rel="L34" class="lines-code chroma">
+								<code><span class="p">}</span>
+</code>
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				
+			
+		</div>
+	</div>
+</div>
+
+
+	<div class="i-text-center">
+		
+				
+		
+	</div>
+
+
+<script>
+function submitDeleteForm() {
+    var message = prompt("delete_confirm_message\n\ndelete_commit_summary", "Delete ''");
+    if (message != null) {
+        $("#delete-message").val(message);
+        $("#delete-file-form").submit()
+    }
+}
+</script>
+
+		
+	</div>
+	<div id="toListModel">
+		<div class="ui modal" id="toShare">
+			<i class="close icon black"></i>
+			<div class="header">共享</div>
+			<div class="content">
+				<form autocomplete="off" class="ui form training ignore-dirty">
+					
+					<div class="fields">
+						<p class="px-sm py-none mb-sm">共享页面将在匿名链接下呈现所选的代码和训练结果，不会显示项目的原始链接地址。但Agit系统不会自动处理代码和训练结果，因此如果需要为匿名盲审等场景提供匿名内容，还需要您自行保证代码内容和训练结果的匿名化。</p>
+					</div>
+
+					<div class="fields">
+						<div class="two wide field required">
+							<label>代码分支</label>
+						</div>
+						<div id="branchField" class="fourteen wide field">
+
+							<div class="fitted item choose">
+								<div class="ui floating filter dropdown custom">
+
+									<div class="ui basic small compact button" style="min-width: 200px;" @click="menuVisible = !menuVisible">
+										<span class="text">
+											<i class="iconfont icon-branch-down"></i>
+											<span v-text='isViewBranch?"分支":"目录树"'></span>:
+                      <strong v-text='isViewBranch?(selectedBranch?selectedBranch:"请选择"):(selectedTag?selectedTag:"请选择")'></strong>
+										</span>
+										<i class="dropdown icon" tabIndex="-1"></i>
+									</div>
+
+									<div tabindex="-1"  id="scrolling" class="menu transition menu-share" :class="{visible: menuVisible}" v-show="menuVisible" @blur="menuVisible = false">
+
+										<div class="ui icon search input" style="width: 200px;">
+											<i class="filter icon"></i>
+											<input name="search" v-model="searchTerm" @keydown="keydown($event)" placeholder="过滤分支或标签...">
+										</div>
+
+										<div class="header branch-tag-choice">
+											<div class="ui grid">
+												<div class="two column row">
+													<a class="reference column" href="javascript:;" @click="handleBranchTab(true)">
+														<span class="text" :class="{black: !isViewBranch}">
+															<i class="iconfont icon-branch-down"></i>
+															分支列表
+														</span>
+													</a>
+													<a class="reference column" href="javascript:;" @click="handleBranchTab(false)">
+														<span class="text" :class="{black: isViewBranch}">
+															<i class="reference tags icon"></i>
+															标签列表
+														</span>
+													</a>
+												</div>
+											</div>
+										</div>
+
+										<div v-show="isViewBranch" class="scrolling menu" ref="scrollContainer">
+											<div v-for="(item, index) in branches" v-show="item.name.includes(searchTerm)" :key="item.name" class="item" @click="handleBranchOrTag(item)">
+												<span v-text="item.name"></span>
+											</div>
+										</div>
+										<div v-show="!isViewBranch" class="scrolling menu" ref="scrollContainer">
+											<div v-for="(item, index) in tags" v-show="item.name.includes(searchTerm)" :key="item.name" class="item" @click="handleBranchOrTag(item)">
+												<span v-text="item.name"></span>
+											</div>
+										</div>
+
+										<div class="message" v-if="(isViewBranch && branches.length==0) || (!isViewBranch && tags.length==0)">未找到结果</div>
+									</div>
+
+									<div class="ui pointing red basic label" style="display:none;">
+										请选择分支或标签
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="fields" v-show="selectedBranch">
+						<div class="two wide field">
+							<label>提交</label>
+						</div>
+						<div id="commitWrap" class="fourteen wide field">
+							<select class="ui search selection dropdown commit-wrap" name="commit">
+								<option value=""></option>
+							</select>
+						</div>
+					</div>
+					<div class="fields">
+						<label class="two wide field  required">共享标题</label>
+						<div class="fourteen wide field trainName-filed">
+							<input v-model="shareName" type="text" name="shareName"  class="form-trainName" :maxlength="16"  placeholder="请输入标题内容，最多16个字符">
+						</div>
+					</div>
+					<div class="ui grid uioption">
+						<label class="required">链接有效期</label>
+					</div>
+					<div class="ui grid fields">
+						<div class="thirteen wide column">
+							<div class="ui four item stackable tabs menu ui-link-bg">
+								<a v-for="(item, index) in shareTimeList" :key="index" :class="['item', activeIdx === item.shareTimeId ? 'active' : '']" data-tab="oneday" @click="handleMenuChange(item)">
+									<span v-text="formatLinkTime(item.shareTimeName)"></span></a>
+							</div>
+						</div>
+						<div class="right aligned three wide column action mt-3xs">
+							<button class="ui primary button" @click="handleLink">
+								生成链接</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="ui modal" id="toCopyShareLink">
+			<i class="close icon black"></i>
+			<div class="header">共享链接已生成</div>
+			<div class="content ui form">
+				<div class="fields">
+					<div class="two wide field">
+						<label>链接地址:</label>
+					</div>
+					<div  class="fourteen wide field">
+						<p v-text="linkAddress" id="share_url"></p>
+					</div>
+				</div>
+				<div class="fields uioption">
+					<div class="two wide field">
+					<label>链接有效期:</label>
+					</div>
+					<div class="fourteen wide field">
+						<p v-text="linkExDate"></p>
+					</div>
+				</div>
+				<div class="fields uioption">
+							<div class="sixteen wide field" style="text-align: right">
+								<button class="ui basic icon button poping primary up clipboard share-button" id="share-button" data-original="复制链接" data-success="已复制链接" data-error="请按下 ⌘-C 或 Ctrl-C 复制" data-content="复制链接" data-variation="inverted tiny"  data-clipboard-target="#share_url">
+									复制
+								</button>
+							</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="content">
+	<p></p>
+</div>
+</div>
+</div>
+
+
+
+
+		
+
+		</div>
+
+		
+
+		<footer>
+	<div class="base-footer-content i-footer mx-auto">
+		<div class="ui left">
+			<div class="p-logo i-flex i-align-center">
+				<img class="logo-icon" src="/img/logo/logo.svg">
+				<i class="logo-text">&copy  Agit Cloud Computing, Ltd.</i>
+				<a id="version-a" style="margin-right: 16px; text-decoration: underline; font-size: 12px;" target="_blank" href="https://agit.ai/AgitDeveloper/AgitPythonExamples/wiki"></a>
+			</div>
+		</div>
+		<div class="ui right links p-logo">
+			<a style="margin-right: 16px; text-decoration: underline; font-size: 12px;" target="_blank" href="/agreement/terms">服务协议</a>
+<a style="margin-right: 16px; text-decoration: underline; font-size: 12px;" target="_blank" href="/agreement/privacy">隐私政策</a>
+<a style="text-decoration: underline; font-size: 12px; margin-right: 16px;" target="_blank" href="/opensource">开源软件</a>
+<a style="text-decoration: underline; font-size: 12px;" target="_blank" id="help-a" target="_blank" href="http://help.agit.ai/">帮助</a>
+
+		</div>
+	</div>
+</footer>
+
+
+
+		
+
+		
+		
+		
+		<script src="/js/index.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+
+		<script src="/vendor/plugins/vue/vue.min.js"></script>
+<script src="/minifyjs/head_navbar.base.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+<script src="/minifyjs/footer_content.base.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+
+
+<script src="/vendor/plugins/promise-polyfill/polyfill.min.js"></script>
+<script src="/vendor/plugins/cssrelpreload/loadCSS.min.js"></script>
+<script src="/vendor/plugins/cssrelpreload/cssrelpreload.min.js"></script>
+<script src="/vendor/plugins/vue-infinite-loading/vue-infinite-loading.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+<script src="/vendor/plugins/Qrcode/qrcode.min.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+<script src="/vendor/plugins/i-components/i.components.min.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+
+<script src="/vendor/plugins/vue-node-spec/node-spec.min.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+<script src="/vendor/plugins/jquery-migrate/jquery-migrate.min.js?v=3.0.1"></script>
+<script src="/vendor/plugins/jquery.areyousure/jquery.are-you-sure.js"></script>
+<script src="/vendor/plugins/emojify/emojify.custom.js"></script>
+<script src="/vendor/plugins/xterm/xterm.js"></script>
+
+
+
+
+
+
+
+
+
+	</body>
+	</html>
+
+<script>
+$("#createTraining").click(function(){
+
+	$api.trainReachUpperLimit({repoId:Number($('.repo-id').text())}).then(data => {
+        if (!data) return;
+		if(data.isUpperLimit){
+			$ITools.handleToast('error', $i18n.tr('code', 'trainCountLimit'))
+			return
+		}
+
+		const mode = $("#branchSelect").attr("data-mode"),
+	      	branch = $("#branchSelect").find("strong").text();
+		let path = ""
+		$(".repo-path a").each(function(index,item){
+			if(index === 0){
+				return
+			}
+			path += path === ""?$(this).attr("title"):("/"+$(this).attr("title"))
+		})
+		const params={
+			scriptPath: $(".repo-path").find(".active.section").attr("title"),
+			workSpace: path,
+			branchName: mode === "branches" ? branch : "",
+			tagName: mode === "branches" ? "" : branch
+		}
+		window.location.href = window.location.origin + $('.repo-url').text() + '/training/create?scriptFile=' + escapePound(JSON.stringify(params))
+      })
+
+
+})
+function toUpload(el) {
+
+const tempSplit = $("#RepoSize").text().split("GB")
+
+
+if (tempSplit.length === 2 && tempSplit[0] >= 1) {
+	$ITools.handleToast('error', $i18n.tr('valid', 'fileSizeLimit'))
+	return
+}
+window.location.href = $(el).attr("data-href")
+}
+function handleShare() {
+$('#toShare').modal('show')
+}
+function shareLink() {
+$('#toCopyShareLink').modal('show')
+}
+function escapePound(str){
+	let res=""
+	res=str.replaceAll("%","%25")
+	res=res.replaceAll("#","%23")
+	res=res.replaceAll(" ","%20")
+	res=res.replaceAll("?","%3F")
+	return res
+}
+</script>
+
+<script src="/minifyjs/auth.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+<script src="/minifyjs/repo_home.js?v=6ab3d3a502725c978d285e96b831c280"></script>
+
