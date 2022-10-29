@@ -19,55 +19,50 @@
         "神族九帝(教育)": "https://alist.shenzjd.com", 
         "课程搜索": "https://www.souke365.cn", 
         "姬路白雪": "https://pan.jlbx.xyz", 
-        "博哥": "www.top12345.top"
+        "博哥": "http://www.top12345.top"
     },
     "Ali": {
-        "token": "3865f0ab8f124688ad786a262af9b940"
+        "token": "http://xn--4bra.live/json/alitoken.json"
     },
     "Zhibo": [
         {
             "pf": "douyu", 
-            "id": "原创IP", 
-            "name": "斗鱼-原创IP"
-        }, 
-        {
-            "pf": "douyu", 
-            "id": "热门游戏", 
+            "id": "rmyx", 
             "name": "斗鱼-热门游戏"
         }, 
         {
             "pf": "douyu", 
-            "id": "主机游戏", 
+            "id": "TVgame", 
             "name": "斗鱼-主机游戏"
         }, 
         {
             "pf": "huya", 
-            "id": "英雄联盟", 
+            "id": "lol", 
             "name": "虎牙-英雄联盟"
         }, 
         {
             "pf": "huya", 
-            "id": "主机游戏", 
+            "id": "100032", 
             "name": "虎牙-主机游戏"
         }, 
         {
             "pf": "huya", 
-            "id": "一起看", 
+            "id": "2135", 
             "name": "虎牙-一起看"
         },
         {
             "pf": "huya", 
-            "id": "二次元", 
+            "id": "2633", 
             "name": "虎牙-二次元"
         },
         {
             "pf": "bilibili", 
-            "id": "英雄联盟", 
+            "id": "lol", 
             "name": "bilibili-英雄联盟"
         },
         {
             "pf": "bilibili", 
-            "id": "虚拟主播", 
+            "id": "9", 
             "name": "bilibili-虚拟主播"
         },        
         {
