@@ -24,6 +24,20 @@
     "Ali": {
         "token": "http://ali.饭太硬.ml/tok"
     },
+    "QiQi":[ 
+        {
+          "jx":"http://lanlan.ckflv.cn/?url=",
+          "jxfrom":"other",
+          "gs":"data,url",
+          "erro":""
+          },
+        {
+          "jx":"http://lanlan.ckflv.cn/?url=",
+          "gs":"data,url",
+          "jxfrom":"QiQi",
+          "erro":"解析失败"
+          }
+    ],
     "Zhibo": [
         {
             "pf": "douyu", 
