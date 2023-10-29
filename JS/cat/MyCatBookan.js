@@ -1,6 +1,6 @@
 import { _ } from './lib/cat.js';
 
-let key = 'bookkan';
+let key = 'bookan';
 let url = 'https://api.bookan.com.cn';
 let siteKey = '';
 let siteType = 0;
@@ -44,10 +44,10 @@ async function category(tid, pg, filter, extend) {
     let books = [];
     for (const book of data.list) {
         books.push({
-            book_id: book.id,
-            book_name: book.name,
-            book_pic: book.cover,
-            book_remarks: book.extra.author,
+            vod_id: book.id,
+            vod_name: book.name,
+            vod_pic: book.cover,
+            vod_remarks: book.extra.author,
         });
     }
     return JSON.stringify({
@@ -62,22 +62,23 @@ async function category(tid, pg, filter, extend) {
 async function detail(id) {
     let content = await request(`${url}/voice/album/units?album_id=${id}&page=1&num=200&order=1`);
     let data = JSON.parse(content).data;
+    console.log(JSON.stringify(data));
 
     let book = {
-        book_id: id,
+        vod_id: id,
         type_name: '',
-        book_year: '',
-        book_area: '',
-        book_remarks: '',
-        book_actor: '',
-        book_director: '',
-        book_content: '',
+        vod_year: '',
+        vod_area: '',
+        vod_remarks: '',
+        vod_actor: '',
+        vod_director: '',
+        vod_content: '',
     };
     let us = _.map(data.list, function (b) {
         return formatPlayUrl(b.title) + '$' + b.file;
     }).join('#');
-    book.volumes = '书卷';
-    book.urls = us;
+    book.vod_play_from = '书卷';
+    book.vod_play_url = us;
 
     return JSON.stringify({
         list: [book],
@@ -87,7 +88,7 @@ async function detail(id) {
 function formatPlayUrl(name) {
     return name
         .trim()
-        .replace(/<|>|《|》/g, '')
+        .replace(/<|>|\.《.*?》/g, '. ')
         .replace(/\$|#/g, ' ')
         .trim();
 }
@@ -109,10 +110,10 @@ async function search(wd, quick, pg) {
     let books = [];
     for (const book of data.list) {
         books.push({
-            book_id: book.id,
-            book_name: book.name,
-            book_pic: book.cover,
-            book_remarks: book.extra.author,
+            vod_id: book.id,
+            vod_name: book.name,
+            vod_pic: book.cover,
+            vod_remarks: book.extra.author,
         });
     }
     return JSON.stringify({
